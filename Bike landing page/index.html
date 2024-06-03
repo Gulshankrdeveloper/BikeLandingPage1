@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike landing page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+        }
+        .first .navbar{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid black;
+            padding: 0 40px;
+        }
+        .navbar .links ul{
+            width: 40%;
+            display: flex;
+            list-style: none;
+            text-decoration: none;
+            justify-content: space-between;
+        }
+        .navbar .links ul li a{
+            text-decoration: none;
+            margin-left: 20px;
+            color: gray;
+        }
+        .navbar .buttons{
+            display: flex;
+            width: 12%;
+            justify-content: space-between;
+        }
+        .navbar .buttons .button1 button{
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+        }
+        .navbar .buttons .button2 button{
+            padding: 5px 8px;
+            background-color: #272525;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .front{
+            width: 100%;
+            height: 100vh;
+            padding: 100px 40px;
+            color: gray;
+            display: flex;
+            justify-content: space-between;
+        }
+        .front .left {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .front .left .heading p{
+            font-size: 50px;
+        }
+        .front .left .heading span{
+            font-size: 60px;
+            font-weight: bold;
+            color: #272525;
+        }
+        .left .line{
+            width: 250px;
+            height: 2px;
+            background-color: #554f4f;
+        }
+        .left .buy{
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left .buy .buysection,.watch{
+            display: flex;
+            align-items: center;
+        }
+        .left .buy .buysection{
+            width: 35%;
+            justify-content: space-between;
+        }
+        .left .buy .watch{
+            width: 50%;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        .left .buy .buysection .button{
+            padding: 10px 15px;
+            background-color: #272525;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        .right .image img{
+            width: 650px;
+            height: 400px;
+        }
+
+        .first .boxes{
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .first .boxes .box{
+            height: 110px;
+            width: 150px;
+            background-color: white;
+            color: gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px 6px;
+        }
+        .first .box p span{
+            font-weight: bold;
+            font-size: 40px;
+            color: #444141;
+        }
+        .box span{
+            font-weight: bold;
+            color: #444141;
+        }
+
+
+        .second{
+            width: 100%;
+            height: 100vh;
+            color: #444141;
+            padding: 0 40px;
+        }
+        .second .header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .second .header h2{
+            font-size: 40px;
+            color: #444141;
+            padding-bottom: 20px;
+        }
+        .second .items{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 70px;
+        }
+        .second .items .images img{
+            width: 450px;
+            height: 400px;
+        }
+        .items .checkboxes .check{
+            display: flex;
+            align-items: center;
+            padding-right: 100px;
+            margin-top: 15px;
+        }
+        .items .checkboxes .check .img{
+            margin-right: 20px;
+        }
+
+
+        .third{
+            width: 100%;
+            height: 80vh;
+            color: #444141;
+            padding: 0 40px;
+        }
+        .third .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .third .image img{
+            width: 80%;
+            height: 80%;
+        }
+
+
+        .fourth{
+            width: 100%;
+            height: 120vh;
+            color: #444141;
+            padding: 0 40px;
+        }
+        .fourth .header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+        }
+        .fourth .header h2{
+            font-size: 40px;
+            color: #444141;
+            padding-bottom: 20px;
+        }
+        .items .left .check{
+            display: flex;
+            align-items: center;
+            padding-right: 100px;
+            margin-top: 20px;
+        }
+        .items .left  h2{
+            font-size: 40px;
+        }
+        .items .left{
+            margin-top: 70px;
+        }
+        .fourth .items{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+
+
+        .fifth{
+            width: 100%;
+            height: 100vh;
+            color: #444141;
+            
+        }
+        .fifth .items{
+            display: flex;
+            justify-content: space-between;
+        }
+        .fifth .items .right .check{
+            display: flex;
+            align-items: center;
+            padding-right: 100px;
+            margin-top: 20px;
+        }
+        .fifth .items .right{
+            margin-top: 100px;
+        }
+        .fifth .items .right  h2{
+            font-size: 40px;
+        }
+        .fifth .bottombtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .fifth .bottombtn .button{
+            padding: 10px 25px;
+            background: none;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+
+        .six{
+            width: 100%;
+            height: 130vh;
+            color: #444141;
+        }
+        .six .items{
+            display: flex;
+            justify-content: space-between;
+            padding: 100px 40px;
+        }
+        .six .header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .six .items .left .buttons{
+            display: flex;
+            flex-direction: column;
+           height: 100px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .six .items .left .buttons .button{
+            padding: 10px 150px;
+            margin-top: 10px;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .six .items .right,.left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .six .header h2{
+            font-size: 40px;
+            color: #444141;
+            padding-bottom: 20px;
+        }
+        .six .items .left img{
+            width: 500px;
+            height: 400px;
+        }
+        .six .items .right img{
+            width: 400px;
+            height: 300px;
+        }
+
+
+
+        .seven{
+            width: 100%;
+            height: 150vh;
+            color: #444141;
+            margin-top: 50px;
+            position: relative;
+        }
+        .seven .header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .seven .header h2{
+            font-size: 40px;
+            color: #444141;
+            padding-bottom: 20px;
+        }
+        .seven .images{
+            padding-top: 50px;
+           
+        }
+        .seven .images img{
+            width: 100%;
+            height: 600px;
+        }
+        .seven .colors{
+            display: flex;
+            justify-content: space-evenly;
+            position: absolute;
+            left: 50px;
+            top: 65%;
+        }
+        .seven .colors img{
+            width: 300px;
+            height: 300px;
+        }
+
+
+
+        .eight{
+            width: 100%;
+            height: 90vh;
+            color: #272525;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f7f7f7;
+            padding-top: 50px;
+            justify-content: space-evenly;
+        }
+        .eight .header h2{
+            font-size: 40px;
+            color: #444141;
+        }
+        .eight .cards{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .eight .cards .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px;
+            text-align: center;
+        }
+        .eight .cards .box .para{
+            text-align: center;
+        }
+        .eight .cards .box .image{
+            display: flex;
+            align-items: center;
+            width: 90%;
+            justify-content: space-evenly;
+        }
+        .eight .buttons{
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .eight .buttons .button{
+            padding: 15px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 1px solid black;
+            background: none;
+        }
+        .eight .buttons .button span{
+            font-size: 20px;
+        }
+        .eight .buttons .button2{
+            background-color: #554f4f;
+            color: white;
+        }
+
+
+
+        .nine{
+            width: 100%;
+            height: 110vh;
+            position: relative;
+        }
+        .nine .upper{
+            width: 100%;
+            height: 50%;
+            color: #636161;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .nine .upper .header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .nine .upper .header h2{
+            font-size: 40px;
+            color: #444141;
+        }
+        .nine .upper .input{
+            display: flex;
+            width: 400px;
+            justify-content: space-between;
+        }
+        .nine .upper  .input .button{
+            padding: 15px 30px;
+            background-color: #272525;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+        .nine .upper .input input{
+            padding: 15px 40px;
+            background-color: #f7f7f7;
+            color: black;
+            border: none;
+            border-radius: 5px;
+        }
+        .nine .lower{
+            width: 100%;
+            height: 50%;
+            background-color: #272525;
+        }
+        .nine .lower .image{
+            position: absolute;
+            top: 40%;
+        }
+        .nine .lower .image img{
+            height: 400px;
+            width: 500px;
+        }
+        .nine .lower .list{
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+           margin-left: 100px;
+        }
+        .nine .lower .list .col{
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 100px;
+            padding-top: 100px;
+        }
+        .nine .lower .list .col1{
+            height: 230px;
+        }
+        .nine .lower .list .col a{
+            color: gainsboro;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="first">
+            <div class="navbar">
+                <div class="logo"><img src="./assets/logo.png" alt=""></div>
+                <div class="links">
+                    <ul>
+                        <li><a href="">PRODUCTS</a></li>
+                        <li><a href="">GALLERY</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <div class="button1"><button>LOG IN</button></div>
+                    <div class="button2"><button>SIGN UP</button></div>
+                </div>
+            </div>
+
+            <div class="front">
+                <div class="left">
+                <div class="heading">
+                    <p>LET'S RIDE <br><span>THE FUTURE.</span></p>
+                </div>
+                <div class="line"></div>
+                <div class="para">
+                    <p>Simple and sleek design with users <br>in mind.</p>
+                </div>
+                <div class="buy">
+                    <div class="buysection">
+                        <button class="button"><span>&rarr;</span></button>
+                        <p>Buy now</p>
+                    </div>
+                    <div class="watch">
+                        <p>Watch our <br>video how <br>it works</p>
+                        <img src="./assets/header play button.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="image"><img src="./assets/header image.png" alt=""></div>
+            </div>
+            </div>
+
+            <div class="boxes">
+                <div class="box box1">
+                    <p><span>105</span> <b>lbs</b></p>
+                    <span>Net weight</span>
+                </div>
+                <div class="box box1">
+                    <p><span>26</span> <b>mph</b></p>
+                    <span>Top Speed</span>
+                </div>
+                <div class="box box1">
+                    <p><span>38</span> <b>miles</b></p>
+                    <span>Max Range</span>
+                </div>
+                <div class="box box1">
+                    <p><span>89</span> <b>nm</b></p>
+                    <span>Max Torques</span>
+                </div>
+                <div class="box box1">
+                    <p><span>22%</span> <b>slope</b></p>
+                    <span>Hill Climbing</span>
+                </div>
+                <div class="box box1">
+                    <p><span>2x</span></p>
+                    <span>Hydralic Disc Brakes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="second">
+            <div class="header">
+                <h2>Product Information</h2>
+                <p>Our Scooter has following unique design and technology Features:</p>
+            </div>
+            <div class="items">
+                <div class="images"><img src="./assets/product information image.png" alt=""></div>
+                <div class="checkboxes">
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Lightweight aircraft grade aluminium Frame</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Car grade lithium battery</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Self-balanced</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>plug n play</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Quick release adapter</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>RFID key card</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="third">
+            <div class="image">
+                <img src="./assets/high efficiency motor.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fourth">
+            <div class="header">
+                <h2>Multiple Accessories</h2>
+                <p>There are multiple modes for the scooter for your multiple needs.</p>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h2>Golf Bag Rock</h2>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Material: aluminium alloy</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Color: Black</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Capacity: 45lbs</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Ease: Steady & adjustable</p>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <img src="./assets/golf bag rock.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fifth">
+            <div class="items">
+            <div class="left">
+                    <img src="./assets/shopping rack.png" alt="">
+                </div>
+                <div class="right">
+                    <h2>Shopping Rack</h2>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Material: aluminium alloy</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Color: Black</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Capacity: 45lbs</p>
+                    </div>
+                    <div class="check">
+                        <div class="img"><img src="./assets/Icon.png" alt=""></div>
+                        <p>Ease: Steady & adjustable</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottombtn">
+                <button class="button">More Accessories Coming Soom</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="six">
+            <div class="header">
+                <h2>Gallery</h2>
+                <p>View gallery of our products and make yourself satisfied with our creation.</p>
+            </div>
+            <div class="items">
+            <div class="left">
+                <div class="image"><img src="./assets/gallery scooter.png" alt=""></div>
+                <div class="buttons">
+                    <button class="button"> Battery Images</button>
+                    <button class="button"> Battery Images</button>
+                    <button class="button"> Battery Images</button>
+                </div>
+            </div>
+
+            <div class="right">
+                <img src="./assets/gallery built quality.png" alt="">
+                <img src="./assets/gallery parts.png" alt="">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="seven">
+            <div class="header">
+                <h2>Colors</h2>
+                <p>Checkout our products colors.</p>
+            </div>
+            <div class="images">
+                <img src="./assets/gallery scooter.png" alt="">
+            </div>
+            <div class="colors">
+               <img src="./assets/color-scooter-1.png" alt="">
+               <img src="./assets/color-scooter-2.png" alt="">
+               <img src="./assets/color-scooter-3.png" alt="">
+               <img src="./assets/color-scooter-4.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="eight">
+            <div class="header">
+                <h2>Testimonials</h2>
+            </div>
+            <div class="cards">
+                <div class="box box1">
+                    <div class="para">
+                        <p>On the other hand, we denounce <br>with righteous indignation and <br>dislike men who are so beguiled <br>and demoralized by the charms <br> of pleasure.</p>
+                    </div>
+                    <div class="image">
+                        <img src="./assets/serhiy hipskyy.png" alt="">
+                        <div class="name">
+                            <p>Serhiy Hipskyy</p>
+                            <span>CEO Univeral</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box1">
+                     <div class="para">
+                        <p>Nam libero tempore, cum soluta <br>nobis est eligendi optio cumque <br>nihil impedit quo minus id quod <br>maxime placeat facere possiums.</p>
+                    </div>
+                    <div class="image">
+                        <img src="./assets/Justus Menke.png" alt="">
+                        <div class="name">
+                            <p>Serhiy Hipskyy</p>
+                            <span>CEO Univeral</span>
+                        </div>
+                </div>
+                </div>
+                <div class="box box1">
+                     <div class="para">
+                        <p>At vero eos et accusamus et <br>iusto odio dignissimos ducimus <br>qui blanditiis praesentium <br>voluptatum deleniti atque <br>corrupti quos dolores.</p>
+                    </div>
+                    <div class="image">
+                        <img src="./assets/Britain Eriksen.png" alt="">
+                        <div class="name">
+                            <p>Serhiy Hipskyy</p>
+                            <span>CEO Univeral</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+            <div class="buttons">
+                <button class="button"><span>&larr;</span></button>
+                <button class="button button2"><span>&rarr;</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="nine">
+            <div class="upper">
+                <div class="header">
+                    <h2>Subscribe To Newsletter</h2>
+                    <p>Subscribe to our Newsletter to get amazing offers in future.</p>
+                </div>
+                <div class="input">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="button">Get start</button>
+                </div>
+            </div>
+            <div class="lower">
+                <div class="image">
+                    <img src="./assets/footer scooter.png" alt="">
+                </div>
+                <div class="list">
+                    <div class="col">
+                        <h2>About</h2>
+                        <a href="">Company</a>
+                        <a href="">Teams</a>
+                        <a href="">Profile</a>
+                        <a href="">Careers</a>
+                    </div>
+                    <div class="col col1">
+                        <h2>Resources</h2>
+                        <a href="">Contact</a>
+                        <a href="">Application</a>
+                        <a href="">FQA Features</a>
+                    </div>
+                    <div class="col col1">
+                        <h2>Legals</h2>
+                        <a href="">Copyright Privacy</a>
+                        <a href="">Policy Disclaimer</a>
+                        <a href="">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
